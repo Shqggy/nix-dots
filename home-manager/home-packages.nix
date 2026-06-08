@@ -49,5 +49,6 @@
     # Other
     bemoji
     nix-prefetch-scripts
+    swaybg
   ];
 }
