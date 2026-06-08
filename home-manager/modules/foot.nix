@@ -14,7 +14,7 @@
         hide-when-typing = "yes";
       };
 
-      colors = {
+      colors-dark = {
         # Atelier
         foreground = "e5e4e2";
         background = "272522";
