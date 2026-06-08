@@ -1,8 +1,10 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    python3
     gcc
+    python3
+    rustc
+    cargo
 
     samtools
     minimap2
@@ -10,5 +12,7 @@
 
     fastfetch
     tree
+
+    krita
   ];
 }
