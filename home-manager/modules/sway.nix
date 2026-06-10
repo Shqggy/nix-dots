@@ -57,9 +57,9 @@
           # layout
           "${mod}+f" = "fullscreen toggle";
           "${mod}+v" = "floating toggle";
-          "${mod}+r" = "mode resize";
+          "${mod}+d" = "mode resize";
 
-          "${mod}+d" = "layout toggle split";
+          "${mod}+m" = "layout toggle split";
           "${mod}+t" = "layout tabbed";
           "${mod}+s" = "layout stacked";
 
