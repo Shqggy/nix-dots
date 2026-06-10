@@ -20,20 +20,17 @@
     ffmpegthumbnailer
     fzf
     git-graph
-    grimblast
+    grim
     htop
     hyprpicker
+    libnotify
     ntfs3g
-    mediainfo
-    microfetch
+    pastel
     playerctl
     ripgrep
-    showmethekey
     silicon
-    udisks
-    ueberzugpp
+    slurp
     unzip
-    w3m
     wget
     wl-clipboard
     wtype
@@ -47,8 +44,8 @@
     maple-mono.NF
 
     # Other
-    bemoji
+    autotiling
+    awww
     nix-prefetch-scripts
-    swaybg
   ];
 }
