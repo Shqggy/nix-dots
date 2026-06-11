@@ -6,7 +6,11 @@
 
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.swayfx;
+    checkConfig = false;
+
     wrapperFeatures.gtk = true;
+
     config = rec {
       modifier = "Mod4";
       terminal = "foot";
@@ -21,8 +25,8 @@
           dwt = "enabled";
         };
         "type:keyboard" = {
-          repeat_delay = 400;
-          repeat_rate = 30;
+          repeat_delay = "400";
+          repeat_rate = "30";
 
           xkb_options = "caps:swapescape";
         };
@@ -46,7 +50,7 @@
         {
           "${mod}+Return" = "exec foot";
           "${mod}+r" = "exec rofi -show drun";
-          "${mod}+c" = "kill";
+          "${mod}+q" = "kill";
 
           # focus
           "${mod}+h" = "focus left";
@@ -61,11 +65,11 @@
 
           "${mod}+m" = "layout toggle split";
           "${mod}+t" = "layout tabbed";
-          "${mod}+s" = "layout stacked";
+          "${mod}+s" = "layout stacking";
 
           # scratchpad
-          "${mod}+minus" = "scratchpad show";
-          "${mod}+Shift+minus" = "move scratchpad";
+          "${mod}+Space" = "scratchpad show";
+          "${mod}+Shift+Space" = "move scratchpad";
 
           # screenshot
           "Print" =
@@ -73,9 +77,9 @@
           "Shift+Print" =
             ''exec grim - | wl-copy && notify-send -i camera-photo "snap!" "screen copied to clipboard"'';
           "Mod1+Print" =
-            ''exec sh -c 'c=$(hyprpicker -an); notify-send "Color Picker" "$(pastel format name "$c") — $c"' '';
+            ''exec sh -c 'c=$(hyprpicker -a); notify-send "swish!" "$c ($(pastel format name "$c")) copied to clipboard"' '';
 
-          # move windows
+          # move window
           "${mod}+Shift+h" = "move left";
           "${mod}+Shift+j" = "move down";
           "${mod}+Shift+k" = "move up";
@@ -91,10 +95,10 @@
           "${mod}+7" = "workspace number 7";
           "${mod}+8" = "workspace number 8";
           "${mod}+9" = "workspace number 9";
-          "${mod}+0" = "workspace number 0";
+          "${mod}+0" = "workspace number 10";
 
           "${mod}+Shift+1" = "move container to workspace number 1, workspace number 1";
-          "${mod}+Shift+2" = "move container to workspace num<D-g>ber 2, workspace number 2";
+          "${mod}+Shift+2" = "move container to workspace number 2, workspace number 2";
           "${mod}+Shift+3" = "move container to workspace number 3, workspace number 3";
           "${mod}+Shift+4" = "move container to workspace number 4, workspace number 4";
           "${mod}+Shift+5" = "move container to workspace number 5, workspace number 5";
@@ -102,7 +106,7 @@
           "${mod}+Shift+7" = "move container to workspace number 7, workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8, workspace number 8";
           "${mod}+Shift+9" = "move container to workspace number 9, workspace number 9";
-          "${mod}+Shift+10" = "move container to workspace number 10, workspace number 10";
+          "${mod}+Shift+0" = "move container to workspace number 10, workspace number 10";
 
           # Audio Volume Controls (Sink - Output)
           "XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
@@ -126,8 +130,9 @@
         };
 
       gaps = {
+        smartBorders = "on";
         smartGaps = "on";
-        inner = 6;
+        inner = 4;
         outer = 4;
       };
 
@@ -137,31 +142,24 @@
 
       startup = [
         { command = "waybar"; }
-        { command = "exec autotiling"; }
+        { command = "autotiling"; }
         { command = "awww-daemon"; }
       ];
 
       colors = {
         focused = {
-          border = "#e7a051";
-          background = "#e9bc76";
+          border = "#e9bc76";
+          background = "#373b41";
           text = "#c5c8c6";
-          indicator = "#e9bc76";
-          childBorder = "#e7a051";
-        };
-        focusedInactive = {
-          border = "#8c9440";
-          background = "#b5bd68";
-          text = "#c5c8c6";
-          indicator = "b5bd68";
-          childBorder = "8c9440";
+          indicator = "#e7a051";
+          childBorder = "#e9bc76";
         };
         unfocused = {
-          border = "c5c8c6";
-          background = "#373b41";
-          text = "c5c8c6";
-          indicator = "#373b41";
-          childBorder = "c5c8c6";
+          border = "#373b41";
+          background = "#282a2e";
+          text = "#c5c8c6";
+          indicator = "#282a2e";
+          childBorder = "#373b41";
         };
         urgent = {
           border = "#bf2037";
@@ -172,5 +170,26 @@
         };
       };
     };
+
+    # additional swayfx options
+    extraConfig = ''
+      # blur 
+      blur enable
+      blur_passes 2
+      blur_radius 2
+
+      # corner radius
+      corner_radius = 5
+
+      # shadows
+      shadows enable
+      shadow_blur_radius 10
+      shadow_color #e9bc767f
+      shadow_inactive_color = #373b417f
+
+      # dim unfocused
+      default_dim_inactive 0.2
+
+    '';
   };
 }

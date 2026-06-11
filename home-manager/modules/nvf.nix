@@ -23,6 +23,7 @@
       languages = {
         nix.enable = true;
         python.enable = true;
+        rust.enable = true;
         # etc.
       };
 
