@@ -179,13 +179,13 @@
       blur_radius 2
 
       # corner radius
-      corner_radius = 5
+      corner_radius 5
 
       # shadows
       shadows enable
       shadow_blur_radius 10
       shadow_color #e9bc767f
-      shadow_inactive_color = #373b417f
+      shadow_inactive_color #373b417f
 
       # dim unfocused
       default_dim_inactive 0.2
