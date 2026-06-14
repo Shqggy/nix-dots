@@ -40,10 +40,13 @@
 
     # Fonts
     maple-mono.NF
+    google-fonts
 
     # Other
     autotiling
     awww
     nix-prefetch-scripts
   ];
+
+  fonts.fontconfig.enable = true;
 }

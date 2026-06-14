@@ -9,6 +9,7 @@
     ./rofi.nix
     ./sway.nix
     ./tmux.nix
+    ./swayosd
     ./waybar
   ];
 }

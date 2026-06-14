@@ -1,72 +1,288 @@
+/*
+ * Waybar — Tomorrow Night
+ *
+ * Palette:
+ *   bg       #1d1f21   fg       #c5c8c6
+ *   black    #282a2e   brblack  #373b41
+ *   red      #bf2037   brred    #e36c6a
+ *   green    #8c9440   brgreen  #b5bd68
+ *   yellow   #e7a051   bryellow #e9bc76
+ *   blue     #4d6a7c   brblue   #8ba4ab
+ *   magenta  #85678f   brmagenta #b294bb
+ *   cyan     #5d8e79   brcyan   #7ac9b4
+ *   white    #707880   brwhite  #c5c8c6
+ *
+ * Style intent: dense, flat, monospace — mirrors the compact infobar
+ * visible in the reference screenshot. No pills, no borders, no radius.
+ */
+
+/* ── Reset & global typography ───────────────────────────────────────────── */
+
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-  font-size: 16px;
-  min-height: 0;
-  color: #ebdbb2;
+    font-family: "Maple Mono NF", "JetBrainsMono Nerd Font", "MesloLGS NF", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    padding: 0 0px;
+    margin: 0 4px;
 }
+
+/* ── Bar window ───────────────────────────────────────────────────────────── */
 
 window#waybar {
-  background: #1d2021;
+    background-color: rgba(29, 31, 33, 0.92);   /* #1d1f21 @ 92% */
+    color: #c5c8c6;
+    border-bottom: 1px solid #282a2e;
 }
 
-/* Workspace Buttons */
-#workspaces button label{
-  color: #ebdbb2;
-  padding: 0 10px;
+window#waybar.hidden {
+    opacity: 0.2;
 }
-#workspaces button.active label {
-  color: #1d2021;
+
+/* ── Section containers ───────────────────────────────────────────────────── */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 4px;
 }
+
+/* ── Shared module baseline ───────────────────────────────────────────────── */
+
+label,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#tray,
+#user,
+#idle_inhibitor,
+#window,
+#mode {
+    padding: 0 5px;
+    color: #c5c8c6;
+    background: transparent;
+}
+
+/* ── Workspace buttons ────────────────────────────────────────────────────── */
+
+button {
+    /* box-shadow keeps text from shifting — standard Waybar pattern */
+    box-shadow: inset 0 -2px transparent;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 0 4px;
+    color: #707880;
+}
+
+button:hover {
+    background: rgba(55, 59, 65, 0.5);
+}
+
+#workspaces button {
+    color: #707880;
+    padding: 0 6px;
+}
+
+#workspaces button.focused,
 #workspaces button.active {
-  background: #d65d0e;
+    color: #8ba4ab;   /* brblue — matches the blue workspace highlight */
+    box-shadow: inset 0 -2px #8ba4ab;
 }
 
-#clock, #battery, #pulseaudio, #tray, #language, #weather {
-  padding: 0 10px;
-  margin: 0 10px;
+#workspaces button.urgent {
+    color: #e36c6a;   /* brred */
+    box-shadow: inset 0 -2px #e36c6a;
 }
 
-#language {
-  margin: 0;
-  color: #d79921;
-  border-bottom: 5px solid #d79921;
+#workspaces button.empty {
+    color: #373b41;
 }
 
-#custom-weather {
-  margin: 0;
-  color: #98971a;
-  border-bottom: 5px solid #98971a
+#workspaces button:hover {
+    color: #c5c8c6;
+    background: rgba(55, 59, 65, 0.4);
+    box-shadow: inset 0 -2px #707880;
 }
+
+/* ── Mode (resize / etc.) ─────────────────────────────────────────────────── */
+
+#mode {
+    color: #e9bc76;   /* bryellow */
+    padding: 0 6px;
+}
+
+/* ── CPU ──────────────────────────────────────────────────────────────────── */
+
+#cpu {
+    color: #b5bd68;   /* brgreen */
+}
+
+#cpu.warning {
+    color: #e9bc76;
+}
+
+#cpu.critical {
+    color: #e36c6a;
+}
+
+/* ── Memory ───────────────────────────────────────────────────────────────── */
+
+#memory {
+    color: #7ac9b4;   /* brcyan */
+}
+
+#memory.warning {
+    color: #e9bc76;
+}
+
+#memory.critical {
+    color: #e36c6a;
+}
+
+/* ── Temperature ──────────────────────────────────────────────────────────── */
+
+#temperature {
+    color: #e9bc76;   /* bryellow */
+}
+
+#temperature.critical {
+    color: #e36c6a;
+}
+
+/* ── Disk ─────────────────────────────────────────────────────────────────── */
+
+#disk {
+    color: #b294bb;   /* brmagenta */
+}
+
+/* ── Clock ────────────────────────────────────────────────────────────────── */
+
+#clock {
+    color: #c5c8c6;
+}
+
+/* ── Window title ─────────────────────────────────────────────────────────── */
+
+#window {
+    color: #707880;
+    font-style: italic;
+}
+
+/* ── User ─────────────────────────────────────────────────────────────────── */
+
+#user {
+    color: #8ba4ab;   /* brblue */
+}
+
+/* ── Battery ──────────────────────────────────────────────────────────────── */
+
+#battery {
+    color: #b5bd68;   /* brgreen */
+}
+
+#battery.charging {
+    color: #7ac9b4;   /* brcyan */
+}
+
+#battery.warning:not(.charging) {
+    color: #e9bc76;
+}
+
+#battery.critical:not(.charging) {
+    color: #e36c6a;
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-timing-function: steps(1);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to { color: #bf2037; }
+}
+
+/* ── Network ──────────────────────────────────────────────────────────────── */
+
+#network {
+    color: #8ba4ab;   /* brblue */
+}
+
+#network.disconnected {
+    color: #e36c6a;
+}
+
+#network.disabled {
+    color: #373b41;
+}
+
+/* ── Pulseaudio / volume ──────────────────────────────────────────────────── */
 
 #pulseaudio {
-  margin: 0;
-  color: #689d6a;
-  border-bottom: 5px solid #689d6a;
+    color: #b294bb;   /* brmagenta */
 }
 
 #pulseaudio.muted {
-  padding: 0 20px;
-  color: #cc241d;
-  border-bottom: 5px solid #cc241d;
+    color: #373b41;
 }
 
-#battery {
-  margin: 0;
-  color: #458588;
-  border-bottom: 5px solid #458588;
+#pulseaudio.source-muted {
+    color: #373b41;
 }
 
-#clock {
-  margin: 0;
-  color: #b16286;
-  border-bottom: 5px solid #b16286;
-}
+/* ── Tray ─────────────────────────────────────────────────────────────────── */
 
 #tray {
-  margin: 0;
-  color: #d65d0e;
-  border-bottom: 5px solid #d65d0e;
+    padding: 0 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    color: #e9bc76;
+}
+
+/* ── Idle inhibitor ───────────────────────────────────────────────────────── */
+
+#idle_inhibitor {
+    color: #707880;
+}
+
+#idle_inhibitor.activated {
+    color: #e9bc76;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────────────────────── */
+
+tooltip {
+    background-color: #282a2e;
+    border: 1px solid #373b41;
+    border-radius: 0;
+    color: #c5c8c6;
+    padding: 4px 8px;
+}
+
+tooltip label {
+    color: #c5c8c6;
+}
+
+
+#hardware {
+    background: transparent;
+    padding: 0;
+}
+
+.hardware-child {
+    padding: 0;
+    background: transparent;
 }

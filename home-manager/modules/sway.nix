@@ -1,8 +1,4 @@
 { pkgs, ... }: {
-  services.swayosd = {
-    enable = true;
-    topMargin = 0.9;
-  };
 
   wayland.windowManager.sway = {
     enable = true;
@@ -120,8 +116,8 @@
           "--release Caps_Lock" = "exec swayosd-client --caps-lock";
 
           # Brightness Controls
-          "XF86MonBrightnessUp" = "exec swayosd-client --brightness raise";
-          "XF86MonBrightnessDown" = "exec swayosd-client --brightness lower";
+          "XF86MonBrightnessUp" = "exec swayosd-client --brightness +2";
+          "XF86MonBrightnessDown" = "exec swayosd-client --brightness -2";
 
           # Media Player Controls
           "XF86AudioPlay" = "exec swayosd-client --playerctl play-pause";
@@ -144,25 +140,26 @@
         { command = "waybar"; }
         { command = "autotiling"; }
         { command = "awww-daemon"; }
+        { command = "swayosd-server"; }
       ];
 
       colors = {
         focused = {
-          border = "#e9bc76";
+          border = "#e9bc76c8";
           background = "#373b41";
           text = "#c5c8c6";
           indicator = "#e7a051";
           childBorder = "#e9bc76";
         };
         unfocused = {
-          border = "#373b41";
+          border = "#373b4100";
           background = "#282a2e";
           text = "#c5c8c6";
           indicator = "#282a2e";
           childBorder = "#373b41";
         };
         urgent = {
-          border = "#bf2037";
+          border = "#bf2037c8";
           background = "#e36c6a";
           text = "#c5c8c6";
           indicator = "#e36c6a";
@@ -179,17 +176,13 @@
       blur_radius 2
 
       # corner radius
-      corner_radius 5
+      corner_radius 2
 
       # shadows
       shadows enable
-      shadow_blur_radius 10
-      shadow_color #e9bc767f
-      shadow_inactive_color #373b417f
-
-      # dim unfocused
-      default_dim_inactive 0.2
-
+      shadow_blur_radius 15
+      shadow_color #282a2e7f
+      shadow_inactive_color #282a2e7f
     '';
   };
 }

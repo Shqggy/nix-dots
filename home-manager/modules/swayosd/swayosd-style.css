@@ -1,0 +1,69 @@
+/*
+ * SwayOSD — Tomorrow Night
+ * Matches the flat, square, monospace-adjacent waybar theme:
+ *   bg     #1d1f21   fg      #c5c8c6
+ *   accent #8ba4ab   (brblue, used for workspace focus in waybar)
+ *   muted  #373b41   (brblack, used for troughs)
+ *
+ * SwayOSD's CSS nodes (from data/style/style.scss):
+ *   window#osd > #container > (image, label, progressbar|segmentedprogress)
+ *   progressbar > trough > progress
+ */
+
+window#osd {
+    background-color: rgba(29, 31, 33, 0.92);   /* #1d1f21 @ 92%, same as waybar */
+    border: 1px solid #373b41;
+    border-radius: 0;                            /* flat, square — matches waybar */
+}
+
+#container {
+    margin: 14px 20px;
+}
+
+image,
+label {
+    color: #c5c8c6;
+}
+
+progressbar:disabled,
+image:disabled {
+    opacity: 0.4;
+}
+
+/* ── Progress bar shape ───────────────────────────────────────────────────── */
+
+progressbar,
+segmentedprogress {
+    min-height: 6px;
+    border-radius: 0;     /* square, like the workspace underline in waybar */
+    background: transparent;
+    border: none;
+}
+
+/* ── Trough (unfilled track) ──────────────────────────────────────────────── */
+
+trough,
+segment {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: #373b41;   /* brblack — same as empty workspace color */
+}
+
+/* ── Filled portion ────────────────────────────────────────────────────────── */
+
+progress,
+segment.active {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: #8ba4ab;   /* brblue — same accent as focused workspace */
+}
+
+segment {
+    margin-left: 8px;
+}
+
+segment:first-child {
+    margin-left: 0;
+}
