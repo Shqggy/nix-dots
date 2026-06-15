@@ -1,13 +1,14 @@
 {
   imports = [
     ./bash.nix
-    ./firefox.nix
+    ./librewolf.nix
     ./foot.nix
     ./git.nix
     ./gtk.nix
     ./mako.nix
     ./nvf.nix
-    ./rofi.nix
+    ./qt.nix
+    ./rofi
     ./sway.nix
     ./tmux.nix
     ./swayosd

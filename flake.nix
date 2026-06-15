@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +21,7 @@
       self,
       nixpkgs,
       home-manager,
+      nur,
       ...
     }@inputs:
     let
@@ -45,6 +50,8 @@
 
           modules = [
             ./hosts/${hostname}/configuration.nix
+
+            { nixpkgs.overlays = [ nur.overlays.default ]; }
 
             home-manager.nixosModules.home-manager
             {

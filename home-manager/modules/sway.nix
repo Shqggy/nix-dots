@@ -46,6 +46,8 @@
         {
           "${mod}+Return" = "exec foot";
           "${mod}+r" = "exec rofi -show drun";
+          "${mod}+w" = "exec librewolf";
+          "${mod}+Shift+w" = "exec librewolf -P squishy";
           "${mod}+q" = "kill";
 
           # focus

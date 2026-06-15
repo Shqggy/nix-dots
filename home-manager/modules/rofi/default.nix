@@ -2,7 +2,7 @@
 {
   programs.rofi = {
     enable = true;
-    font = "MapleMono NF: size=10";
+    font = "MapleMono NF";
     terminal = "${pkgs.foot}/bin/foot";
 
     extraConfig = {
@@ -14,5 +14,6 @@
       display-drun = "Apps";
       sidebar-mode = true;
     };
+    theme = ./theme.rofi;
   };
 }

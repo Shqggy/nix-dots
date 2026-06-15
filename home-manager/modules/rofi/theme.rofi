@@ -1,0 +1,98 @@
+* {
+    foreground:    #c5c8c6;
+    background:    #1d1f21;
+    background-alt: #282a2e;
+
+    red:    #bf2037;
+    green:  #8c9440;
+    yellow: #e7a051;
+    blue:   #4d6a7c;
+    magenta: #85678f;
+    cyan:   #5d8e79;
+
+    border-color: @blue;
+    selected-color: @blue;
+}
+
+window {
+    background-color: @background;
+    border:           2px;
+    border-color:     @border-color;
+    border-radius:    4px;
+    padding:          10px;
+    width:            500px;
+}
+
+mainbox {
+    background-color: transparent;
+    children:          [ inputbar, listview ];
+    spacing:            10px;
+}
+
+inputbar {
+    background-color: @background-alt;
+    text-color:        @foreground;
+    border-radius:     2px;
+    padding:           8px 12px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @selected-color;
+    padding: 0 6px 0 0;
+}
+
+entry {
+    text-color:    @foreground;
+    placeholder:   "Search...";
+}
+
+listview {
+    background-color: transparent;
+    lines:              8;
+    columns:            1;
+    spacing:            4px;
+    fixed-height:       true;
+    dynamic:            false;
+}
+
+element {
+    background-color: transparent;
+    text-color:        @foreground;
+    border-radius:     2px;
+    padding:           6px 10px;
+}
+
+element selected {
+    background-color: @selected-color;
+    text-color:        @background;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:        inherit;
+}
+
+element-icon {
+    size: 1em;
+}
+
+inputbar {
+    background-color: @background-alt;
+    text-color:        @foreground;
+    border-radius:     2px;
+    padding:           8px 12px;
+    children:          [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color:        @selected-color;
+}
+
+entry {
+    background-color: transparent;
+    text-color:        @foreground;
+    placeholder:       "Search...";
+    placeholder-color: @foreground;
+}
