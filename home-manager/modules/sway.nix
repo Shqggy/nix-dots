@@ -132,7 +132,17 @@
         outer = 4;
       };
 
-      window.titlebar = false;
+      window = {
+        titlebar = false;
+        commands = [
+          {
+            criteria = {
+              app_id = "blueman-manager";
+            };
+            command = "floating enable, resize set 300 500, move position 1000 32";
+          }
+        ];
+      };
 
       bars = [ ]; # make way for swaybar
 
@@ -140,7 +150,6 @@
         { command = "waybar"; }
         { command = "autotiling"; }
         { command = "awww-daemon"; }
-        { command = "swayosd-server"; }
       ];
 
       colors = {

@@ -122,15 +122,15 @@ button:hover {
 /* ── CPU ──────────────────────────────────────────────────────────────────── */
 
 #cpu {
-    color: #b5bd68;   /* brgreen */
+    color: #e9bc76; /* bryellow */
 }
 
 #cpu.warning {
-    color: #e9bc76;
+    color: #e36c6a;
 }
 
 #cpu.critical {
-    color: #e36c6a;
+    color: #bf2037;
 }
 
 /* ── Memory ───────────────────────────────────────────────────────────────── */
@@ -285,4 +285,33 @@ tooltip label {
 .hardware-child {
     padding: 0;
     background: transparent;
+}
+
+#mpris {
+    color: #b294bb;   /* brmagenta */
+}
+
+#mpris.paused {
+    color: #707880;
+}
+
+#privacy {
+    padding: 0 5px;
+}
+
+#privacy-item {
+    padding: 0 4px;
+    color: #e9bc76;   /* bryellow — draws attention */
+}
+
+#bluetooth {
+    color: #8ba4ab;   /* brblue */
+}
+
+#bluetooth.disabled {
+    color: #373b41;
+}
+
+#bluetooth.connected {
+    color: #7ac9b4;   /* brcyan */
 }

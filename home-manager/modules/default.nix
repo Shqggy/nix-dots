@@ -4,6 +4,7 @@
     ./firefox.nix
     ./foot.nix
     ./git.nix
+    ./gtk.nix
     ./mako.nix
     ./nvf.nix
     ./rofi.nix

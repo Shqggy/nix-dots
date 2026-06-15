@@ -24,15 +24,17 @@
 
         modules-left = [
           "sway/workspaces"
-          "sway/mode"
           "idle_inhibitor"
+          "sway/mode"
         ];
 
         modules-center = [
+          "privacy"
           "clock"
         ];
 
         modules-right = [
+          "bluetooth"
           "group/hardware"
           "network"
           "battery"
@@ -83,14 +85,14 @@
         "temperature" = {
           # thermal-zone  = 2;   # uncomment and adjust for your hardware
           critical-threshold = 80;
-          format = "󰔐 {temperatureF}°F";
+          format = "󰔏 {temperatureF}°F";
           format-critical = "󰸁 {temperatureF}°F";
           tooltip = false;
         };
 
         "disk" = {
           interval = 30;
-          format = "󰄚 {percentage_used}%";
+          format = " {percentage_used}%";
           path = "/";
           tooltip-format = "{used} / {total} used on {path}";
         };
@@ -122,20 +124,34 @@
           tooltip-format = "{capacity}% — {timeTo} remaining";
         };
 
-        # ── Center modules ───────────────────────────────────────────────────
-
         "sway/window" = {
           format = "{app_id}";
           max-length = 60;
           tooltip = false;
         };
 
+        "privacy" = {
+          icon-spacing = 4;
+          icon-size = 14;
+          transition-duration = 250;
+          modules = [
+            {
+              type = "screenshare";
+              tooltip = true;
+              tooltip-icon-size = 24;
+            }
+            {
+              type = "audio-in";
+              tooltip = true;
+              tooltip-icon-size = 24;
+            }
+          ];
+        };
+
         "clock" = {
           format = "󰥔 {:%I:%M  󰃭 %a %d}";
           tooltip-format = "<tt>{calendar}</tt>";
         };
-
-        # ── Right modules ────────────────────────────────────────────────────
 
         "idle_inhibitor" = {
           format = "{icon}";
@@ -181,9 +197,9 @@
           };
           modules = [
             "cpu"
-            "memory"
             "temperature"
             "disk"
+            "memory"
           ];
         };
 
@@ -192,8 +208,14 @@
           tooltip-format = "up {work_d}d {work_H}h";
         };
 
-        "tray" = {
-          spacing = 6;
+        "bluetooth" = {
+          format = "󰂯";
+          format-disabled = "󰂲";
+          format-connected = "󰂱";
+          tooltip-format = "{controller_alias}\t{controller_address}";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          on-click = "blueman-manager";
         };
       };
     };

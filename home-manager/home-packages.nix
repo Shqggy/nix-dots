@@ -5,9 +5,15 @@
 
     # Desktop apps
     anki
+    kdePackages.dolphin
+    kdePackages.gwenview
+    libreoffice
     mpv
+    obs-studio
     obsidian
     pavucontrol
+    vlc
+    zotero
 
     # CLI utils
     bc
