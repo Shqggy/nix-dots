@@ -46,6 +46,7 @@
             zotero-connector
             youtube-recommended-videos
             wikipedia-first
+            darkreader
             tasks-for-canvas
           ];
         };
@@ -92,6 +93,8 @@
             zotero-connector
             youtube-recommended-videos
             wikipedia-first
+            darkreader
+            tasks-for-canvas
           ];
         };
       };
@@ -100,7 +103,7 @@
     policies = {
       # blank homepage
       Homepage = {
-        URL = "about:blank";
+        URL = "about:home";
         StartPage = "homepage";
       };
       NewTabPage = false;

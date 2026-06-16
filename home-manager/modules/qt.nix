@@ -7,7 +7,7 @@
     kvantum = {
       enable = true;
       themes = with pkgs; [
-        catppuccin-kvantum
+        kvmarwaita
       ];
     };
   };

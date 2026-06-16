@@ -7,11 +7,14 @@
     anki
     kdePackages.dolphin
     kdePackages.gwenview
+    kdePackages.kate
+    lapce
     libreoffice
     mpv
     obs-studio
     obsidian
     pavucontrol
+    vscodium
     vlc
     zotero
 
