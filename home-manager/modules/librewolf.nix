@@ -11,6 +11,7 @@
         isDefault = true;
         search = {
           default = "ddg";
+          force = true;
           engines = {
             wiki.metaData.alias = "<";
             bing.metaData.hidden = true;
@@ -58,6 +59,7 @@
         isDefault = false;
         search = {
           default = "ddg";
+          force = true;
           engines = {
             wiki.metaData.alias = "<";
             bing.metaData.hidden = true;
@@ -106,7 +108,7 @@
         URL = "about:home";
         StartPage = "homepage";
       };
-      NewTabPage = false;
+      NewTabPage = true;
 
       # updates and background services
       AppAutoUpdate = false;

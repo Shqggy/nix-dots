@@ -15,6 +15,7 @@
     obsidian
     pavucontrol
     vscodium
+    helix
     vlc
     zotero
 
