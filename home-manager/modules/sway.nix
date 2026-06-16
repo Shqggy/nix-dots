@@ -148,6 +148,7 @@
         {command = "waybar";}
         {command = "autotiling";}
         {command = "awww-daemon";}
+        {command = "reload-tmux";}
       ];
 
       colors = {
