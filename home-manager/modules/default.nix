@@ -9,9 +9,10 @@
     ./mako.nix
     ./nvf.nix
     ./qt.nix
-    ./rofi
     ./sway.nix
     ./tmux.nix
+    ./rofi
+    ./scripts
     ./swayosd
     ./waybar
   ];

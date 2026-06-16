@@ -75,6 +75,7 @@ element-text {
 
 element-icon {
     size: 1em;
+    background-color: transparent;
 }
 
 inputbar {

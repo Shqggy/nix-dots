@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -7,8 +7,34 @@
     escapeTime = 0;
     keyMode = "vi";
     terminal = "screen-256color";
+    historyLimit = 100000;
+
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      gruvbox
+
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-capture-pane-contents 'on'
+          set -g @resurrect-strategy-nvim 'session'
+        '';
+      }
+
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '5'
+        '';
+      }
+    ];
+
     extraConfig = ''
       set -as terminal-features ",foot*:RGB"
+      set -g base-index 1
+      setw -g pane-base-index 1
+
       bind -n M-r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
       bind C-p previous-window
       bind C-n next-window
@@ -30,6 +56,11 @@
       bind -n M-Up select-pane -U
       bind -n M-Down select-pane -D
 
+      bind -n M-h select-pane -L
+      bind -n M-l select-pane -R
+      bind -n M-k select-pane -U
+      bind -n M-j select-pane -D
+
       bind -n M-S-Left resize-pane -L 5
       bind -n M-S-Right resize-pane -R 5
       bind -n M-S-Up resize-pane -U 3
@@ -46,19 +77,5 @@
       bind -n M-q kill-window
       bind -n M-Q kill-session
     '';
-    plugins = with pkgs; [
-      tmuxPlugins.gruvbox
-      # {
-      #   plugin = tmuxPlugins.resurrect;
-      #   extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-      # }
-      # {
-      #   plugin = tmuxPlugins.continuum;
-      #   extraConfig = ''
-      # set -g @continuum-restore 'on'
-      # set -g @continuum-save-interval '60' # minutes
-      #   '';
-      # }
-    ];
   };
 }
