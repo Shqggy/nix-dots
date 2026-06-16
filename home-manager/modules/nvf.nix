@@ -344,9 +344,6 @@
             vim.keymap.set("n", "<leader>fc", function()
               tb.live_grep({ default_text = vim.fn.fnamemodify(vim.fn.expand("%"), ":t:r") })
             end, { desc = "Grep filename" })
-            vim.keymap.set("n", "<leader>fi", function()
-              tb.find_files({ cwd = vim.fn.stdpath("config") })
-            end, { desc = "Find in nvim config" })
           '';
 
         # ---- harpoon keybinds ----------------------------------------------
@@ -359,7 +356,7 @@
 
             vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end,
               { desc = "Harpoon add" })
-            vim.keymap.set("n", "<leader>fh", function()
+            vim.keymap.set("n", "<leader>fa", function()
               harpoon.ui:toggle_quick_menu(harpoon:list())
             end, { desc = "Harpoon menu" })
             vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end,
