@@ -50,7 +50,7 @@
         enableFormat = true;
         enableExtraDiagnostics = true;
 
-        luas.enable = true;
+        lua.enable = true;
         nix.enable = true;
         bash.enable = true;
         python.enable = true;

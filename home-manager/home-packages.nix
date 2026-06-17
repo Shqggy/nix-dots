@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # Packages in each category are sorted alphabetically
 
@@ -9,6 +8,7 @@
     kdePackages.gwenview
     libreoffice
     mpv
+    krita
     obs-studio
     obsidian
     pavucontrol
@@ -30,6 +30,8 @@
     libnotify
     ntfs3g
     pastel
+    fastfetch
+    tree
     playerctl
     ripgrep
     silicon
@@ -42,7 +44,16 @@
     zip
 
     # Coding stuff
+    gcc
+    python3
+    rustc
+    cargo
     nodejs
+
+    # Comp Bio stuff
+    samtools
+    minimap2
+    freebayes
 
     # Fonts
     maple-mono.NF
