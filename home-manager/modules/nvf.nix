@@ -50,7 +50,7 @@
         enableFormat = true;
         enableExtraDiagnostics = true;
 
-        lua.enable = true;
+        luas.enable = true;
         nix.enable = true;
         bash.enable = true;
         python.enable = true;
@@ -85,6 +85,17 @@
         gitsigns.enable = true;
         gitsigns.codeActions.enable = false;
         neogit.enable = true;
+      };
+
+      session.nvim-session-manager = {
+        enable = true;
+        setupOpts = {
+          autoload_mode = "CurrentDir";
+
+          autosave_last_session = true;
+          autosave_ignore_not_normal = true;
+          autosave_ignore_filetypes = ["gitcommit" "gitrebase"];
+        };
       };
 
       binds.whichKey.enable = true;
@@ -220,57 +231,57 @@
           # LSP keybinds (set here for discoverability; LspAttach block below
           # does the actual buffer-local mapping so they only fire with a server)
           "K" = {
-            action = "<cmd>lua vim.lsp.buf.hover()<CR>";
+            action = "<cmd>luas vim.lsp.buf.hover()<CR>";
             desc = "Hover docs";
             silent = true;
           };
           "gd" = {
-            action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+            action = "<cmd>luas vim.lsp.buf.definition()<CR>";
             desc = "Go to definition";
             silent = true;
           };
           "gD" = {
-            action = "<cmd>lua vim.lsp.buf.declaration()<CR>";
+            action = "<cmd>luas vim.lsp.buf.declaration()<CR>";
             desc = "Go to declaration";
             silent = true;
           };
           "gi" = {
-            action = "<cmd>lua vim.lsp.buf.implementation()<CR>";
+            action = "<cmd>luas vim.lsp.buf.implementation()<CR>";
             desc = "Go to impl";
             silent = true;
           };
           "go" = {
-            action = "<cmd>lua vim.lsp.buf.type_definition()<CR>";
+            action = "<cmd>luas vim.lsp.buf.type_definition()<CR>";
             desc = "Go to type def";
             silent = true;
           };
           "gr" = {
-            action = "<cmd>lua vim.lsp.buf.references()<CR>";
+            action = "<cmd>luas vim.lsp.buf.references()<CR>";
             desc = "References";
             silent = true;
           };
           "gs" = {
-            action = "<cmd>lua vim.lsp.buf.signature_help()<CR>";
+            action = "<cmd>luas vim.lsp.buf.signature_help()<CR>";
             desc = "Signature help";
             silent = true;
           };
           "gl" = {
-            action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+            action = "<cmd>luas vim.diagnostic.open_float()<CR>";
             desc = "Diagnostic float";
             silent = true;
           };
           "<F2>" = {
-            action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+            action = "<cmd>luas vim.lsp.buf.rename()<CR>";
             desc = "Rename symbol";
             silent = true;
           };
           "<F3>" = {
-            action = "<cmd>lua vim.lsp.buf.format()<CR>";
+            action = "<cmd>luas vim.lsp.buf.format()<CR>";
             desc = "Format";
             silent = true;
           };
           "<F4>" = {
-            action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+            action = "<cmd>luas vim.lsp.buf.code_action()<CR>";
             desc = "Code action";
             silent = true;
           };
@@ -297,7 +308,7 @@
 
           # <F3> format in visual/select mode
           "<F3>" = {
-            action = "<cmd>lua vim.lsp.buf.format()<CR>";
+            action = "<cmd>luas vim.lsp.buf.format()<CR>";
             desc = "Format";
             silent = true;
           };
@@ -329,7 +340,7 @@
         # ---- telescope keybinds --------------------------------------------
         telescope-keybinds =
           /*
-          lua
+          luas
           */
           ''
             local tb = require("telescope.builtin")
@@ -349,7 +360,7 @@
         # ---- harpoon keybinds ----------------------------------------------
         harpoon-keybinds =
           /*
-          lua
+          luas
           */
           ''
             local harpoon = require("harpoon")
@@ -367,7 +378,7 @@
       };
 
       luaConfigRC.extraConfig = ''
-        -- your custom lua here
+        -- your custom luas here
       '';
     };
   };
