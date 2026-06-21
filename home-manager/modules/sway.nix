@@ -149,6 +149,7 @@
         {command = "autotiling";}
         {command = "awww-daemon";}
         {command = "reload-tmux";}
+        {command = "swayosd-client";}
       ];
 
       colors = {

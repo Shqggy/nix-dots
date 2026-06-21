@@ -45,10 +45,14 @@
 
     # Coding stuff
     gcc
+    rustup
     python3
-    rustc
-    cargo
+    uv
     nodejs
+
+    # Container stuff
+    apptainer
+    docker
 
     # Comp Bio stuff
     samtools
@@ -63,6 +67,7 @@
     autotiling
     awww
     nix-prefetch-scripts
+    nix-ld
   ];
 
   fonts.fontconfig.enable = true;
