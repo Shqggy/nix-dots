@@ -8,10 +8,11 @@
 #
 # Font: Maple Mono NF is already in your Home Manager config (envy).
 # The style.css is read from ./style.css (same directory as this file).
-
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -50,11 +51,11 @@
           numeric-first = true;
           format = "{name}";
           persistent-workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
+            "1" = [];
+            "2" = [];
+            "3" = [];
+            "4" = [];
+            "5" = [];
           };
         };
 

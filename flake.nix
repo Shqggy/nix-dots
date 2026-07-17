@@ -16,72 +16,71 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nur,
-      ...
-    }@inputs:
-    let
-      system = "x86_64-linux";
-      homeStateVersion = "26.05";
-      user = "joel";
-      hosts = [
-        {
-          hostname = "envy";
-          stateVersion = "26.05";
-        }
-      ];
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nur,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    homeStateVersion = "26.05";
+    user = "joel";
+    hosts = [
+      {
+        hostname = "envy";
+        stateVersion = "26.05";
+      }
+    ];
 
-      makeSystem =
-        { hostname, stateVersion }:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit
-              inputs
-              stateVersion
-              hostname
-              user
-              ;
-          };
-
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-
-            { nixpkgs.overlays = [ nur.overlays.default ]; }
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.sharedModules = [
-                inputs.nvf.homeManagerModules.nvf
-              ];
-
-              home-manager.extraSpecialArgs = {
-                inherit inputs homeStateVersion user;
-              };
-
-              home-manager.users.${user} = import ./home-manager/home.nix;
-            }
-          ];
+    makeSystem = {
+      hostname,
+      stateVersion,
+    }:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit
+            inputs
+            stateVersion
+            hostname
+            user
+            ;
         };
 
-    in
-    {
-      nixosConfigurations = nixpkgs.lib.foldl' (
-        configs: host:
-        configs
-        // {
-          "${host.hostname}" = makeSystem {
-            inherit (host) hostname stateVersion;
-          };
-        }
-      ) { } hosts;
+        modules = [
+          ./hosts/${hostname}/configuration.nix
 
-    };
+          {nixpkgs.overlays = [nur.overlays.default];}
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.sharedModules = [
+              inputs.nvf.homeManagerModules.nvf
+            ];
+
+            home-manager.extraSpecialArgs = {
+              inherit inputs homeStateVersion user;
+            };
+
+            home-manager.users.${user} = import ./home-manager/home.nix;
+          }
+        ];
+      };
+  in {
+    nixosConfigurations =
+      nixpkgs.lib.foldl' (
+        configs: host:
+          configs
+          // {
+            "${host.hostname}" = makeSystem {
+              inherit (host) hostname stateVersion;
+            };
+          }
+      ) {}
+      hosts;
+  };
 }

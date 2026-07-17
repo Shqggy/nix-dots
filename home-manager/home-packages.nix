@@ -34,8 +34,10 @@
     tree
     playerctl
     ripgrep
+    gdown
     silicon
     slurp
+    sshfs
     unzip
     wget
     wl-clipboard
@@ -49,6 +51,7 @@
     python3
     uv
     nodejs
+    npm
 
     # Container stuff
     apptainer
@@ -67,7 +70,6 @@
     autotiling
     awww
     nix-prefetch-scripts
-    nix-ld
   ];
 
   fonts.fontconfig.enable = true;

@@ -1,6 +1,7 @@
 {
   imports = [
     ./bash.nix
+    ./dbeaver.nix
     ./librewolf.nix
     ./foot.nix
     ./git.nix

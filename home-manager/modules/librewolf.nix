@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.librewolf = {
     enable = true;
-    languagePacks = [ "en-US" ];
+    languagePacks = ["en-US"];
 
     profiles = {
       rough = {
@@ -35,7 +34,7 @@
                 }
               ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "np" ];
+              definedAliases = ["np"];
             };
           };
         };
@@ -49,6 +48,7 @@
             wikipedia-first
             darkreader
             tasks-for-canvas
+            tomato-clock
           ];
         };
       };
@@ -83,7 +83,7 @@
                 }
               ];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [ "np" ];
+              definedAliases = ["np"];
             };
           };
         };
