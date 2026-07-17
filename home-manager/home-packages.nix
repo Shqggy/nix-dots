@@ -51,7 +51,7 @@
     python3
     uv
     nodejs
-    npm
+    zlib
 
     # Container stuff
     apptainer
