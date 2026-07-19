@@ -14,7 +14,6 @@
     ./tmux.nix
     ./rofi
     ./scripts
-    ./swayosd
     ./waybar
   ];
 }

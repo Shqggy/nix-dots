@@ -42,6 +42,7 @@
     wget
     wl-clipboard
     wtype
+    xev
     yt-dlp
     zip
 

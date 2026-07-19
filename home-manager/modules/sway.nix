@@ -103,24 +103,21 @@
         "${mod}+Shift+0" = "move container to workspace number 10, workspace number 10";
 
         # Audio Volume Controls (Sink - Output)
-        "XF86AudioRaiseVolume" = "exec swayosd-client --output-volume raise";
-        "XF86AudioLowerVolume" = "exec swayosd-client --output-volume lower";
-        "XF86AudioMute" = "exec swayosd-client --output-volume mute-toggle";
+        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+        "XF86AudioMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 
         # Microphone Volume Control (Source - Input)
-        "XF86AudioMicMute" = "exec swayosd-client --input-volume mute-toggle";
-
-        # Caps Lock
-        "--release Caps_Lock" = "exec swayosd-client --caps-lock";
+        "XF86AudioMicMute" = "exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
         # Brightness Controls
-        "XF86MonBrightnessUp" = "exec swayosd-client --brightness +2";
-        "XF86MonBrightnessDown" = "exec swayosd-client --brightness -2";
+        "XF86MonBrightnessUp" = "exec brightnessctl set +2%";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 2%-";
 
         # Media Player Controls
-        "XF86AudioPlay" = "exec swayosd-client --playerctl play-pause";
-        "XF86AudioNext" = "exec swayosd-client --playerctl next";
-        "XF86AudioPrev" = "exec swayosd-client --playerctl prev";
+        "XF86AudioPlay" = "exec playerctl play-pause";
+        "XF86AudioNext" = "exec playerctl next";
+        "XF86AudioPrev" = "exec playerctl previous";
       };
 
       gaps = {
@@ -149,7 +146,6 @@
         {command = "autotiling";}
         {command = "awww-daemon";}
         {command = "reload-tmux";}
-        {command = "swayosd-server";}
       ];
 
       colors = {
