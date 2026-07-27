@@ -9,7 +9,7 @@
     ./kernel.nix
     ./net.nix
     ./nix.nix
-    ./openssh.nix
+    ./openssh
     ./timezone.nix
     ./user.nix
     ./zram.nix
