@@ -2,6 +2,7 @@
   imports = [
     ./bash.nix
     ./dbeaver.nix
+    ./discord.nix
     ./librewolf.nix
     ./foot.nix
     ./git.nix
