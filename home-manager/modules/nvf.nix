@@ -30,8 +30,8 @@
       # theming
       theme = {
         enable = true;
-        name = "gruvbox";
-        style = "dark";
+        name = "tokyonight";
+        style = "moon";
         transparent = true;
       };
 

@@ -12,7 +12,6 @@
     ./nvf.nix
     ./qt.nix
     ./sway.nix
-    ./tailscale.nix
     ./tmux.nix
     ./rofi
     ./scripts

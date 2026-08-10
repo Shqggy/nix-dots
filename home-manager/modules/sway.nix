@@ -44,7 +44,8 @@
         "${mod}+Return" = "exec foot";
         "${mod}+r" = "exec rofi -show drun";
         "${mod}+w" = "exec librewolf";
-        "${mod}+Shift+w" = "exec librewolf -P squishy";
+        "${mod}+e" = "exec dolphin";
+        "${mod}+Shift+w" = "exec chromium";
         "${mod}+q" = "kill";
         "${mod}+grave" = "exec tmux-launcher";
         "${mod}+b" = "exec wallpaper-picker";
@@ -154,7 +155,8 @@
           background = "#373b41";
           text = "#c5c8c6";
           indicator = "#e7a051";
-          childBorder = "#e9bc76";
+          # childBorder = "#e9bc76";
+          childBorder = "#c5c8c6";
         };
         unfocused = {
           border = "#373b4100";

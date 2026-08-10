@@ -12,6 +12,8 @@
     obs-studio
     obsidian
     pavucontrol
+    qimgv
+    rnote
     vlc
     zotero
 
@@ -20,6 +22,7 @@
     bottom
     brightnessctl
     cliphist
+    ungoogled-chromium
     ffmpeg
     ffmpegthumbnailer
     fzf
@@ -68,6 +71,7 @@
     google-fonts
 
     # Other
+    apple-cursor
     autotiling
     awww
     nix-prefetch-scripts

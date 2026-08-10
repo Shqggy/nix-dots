@@ -11,8 +11,12 @@
 
     plugins = with pkgs.tmuxPlugins; [
       sensible
-      gruvbox
-
+      {
+        plugin = tokyo-night-tmux;
+        extraConfig = ''
+          set -g @tokyo-night-tmux_theme 'moon'
+        '';
+      }
       {
         plugin = resurrect;
         extraConfig = ''

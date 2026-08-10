@@ -8,6 +8,26 @@
         name = "rough";
         id = 0;
         isDefault = true;
+        settings = {
+          # Remember cookies between sessions
+          "network.cookie.lifetimePolicy" = 0;
+
+          # Don't clear data when closing LibreWolf
+          "privacy.sanitize.sanitizeOnShutdown" = false;
+          "privacy.clearOnShutdown.cookies" = false;
+          "privacy.clearOnShutdown.history" = false;
+          "privacy.clearOnShutdown.cache" = false;
+          "privacy.clearOnShutdown.downloads" = false;
+          "privacy.clearOnShutdown.sessions" = false;
+          "privacy.clearOnShutdown.siteSettings" = false;
+
+          # Don't always use private browsing
+          "browser.privatebrowsing.autostart" = false;
+
+          # Accept normal cookies
+          "network.cookie.cookieBehavior" = 0;
+        };
+
         search = {
           default = "ddg";
           force = true;
@@ -15,6 +35,63 @@
             wiki.metaData.alias = "<";
             bing.metaData.hidden = true;
             perplexity.metaData.hidden = true;
+
+            wikipedia = {
+              name = "Wikipedia";
+              urls = [
+                {
+                  template = "https://en.wikipedia.org/w/index.php";
+                  params = [
+                    {
+                      name = "search";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "https://en.wikipedia.org/favicon.ico";
+              definedAliases = [
+                "wk"
+                "<"
+              ];
+            };
+
+            google-scholar = {
+              name = "Google Scholar";
+              urls = [
+                {
+                  template = "https://scholar.google.com/scholar";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "https://scholar.google.com/favicon.ico";
+              definedAliases = [
+                "gs"
+                "@scholar"
+              ];
+            };
+
+            youtube = {
+              name = "YouTube";
+              urls = [
+                {
+                  template = "https://www.youtube.com/results";
+                  params = [
+                    {
+                      name = "search_query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "https://www.youtube.com/favicon.ico";
+              definedAliases = ["yt"];
+            };
 
             nix-packages = {
               name = "Nix Packages";
@@ -125,7 +202,7 @@
       DisableSetDesktopBackground = true;
       DisablePocket = true;
       DisableTelemetry = true;
-      DisableFormHistory = true;
+      DisableFormHistory = false;
 
       # access restrictions
       BlockAboutConfig = false;

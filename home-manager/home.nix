@@ -1,6 +1,7 @@
 {
   homeStateVersion,
   user,
+  pkgs,
   ...
 }: {
   imports = [
@@ -13,5 +14,12 @@
     homeDirectory = "/home/${user}";
     stateVersion = homeStateVersion;
     # sessionPath = ["/home/${user}/.cargo/bin"];
+    pointerCursor = {
+      enable = true;
+      sway.enable = true;
+      sway.size = 24;
+      package = pkgs.apple-cursor;
+      name = "macOS";
+    };
   };
 }
