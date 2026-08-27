@@ -54,7 +54,24 @@
         nix.enable = true;
         bash.enable = true;
         python.enable = true;
+        clang.enable = true;
+        cmake.enable = true;
+        r.enable = true;
+        sql.enable = true;
+        tex.enable = true;
         rust.enable = true;
+
+        typescript.enable = true;
+        html.enable = true;
+        css.enable = true;
+        php.enable = true;
+
+        xml.enable = true;
+        yaml.enable = true;
+        json.enable = true;
+
+        awk.enable = true;
+        docker.enable = true;
         markdown.enable = true;
       };
 

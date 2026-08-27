@@ -11,6 +11,7 @@
     krita
     obs-studio
     obsidian
+    spotify
     pavucontrol
     qimgv
     rnote
@@ -22,6 +23,7 @@
     bottom
     brightnessctl
     cliphist
+    distrobox
     ungoogled-chromium
     ffmpeg
     ffmpegthumbnailer
@@ -38,6 +40,7 @@
     playerctl
     ripgrep
     gdown
+    openconnect
     silicon
     slurp
     sshfs
@@ -59,7 +62,6 @@
 
     # Container stuff
     apptainer
-    docker
 
     # Comp Bio stuff
     samtools
