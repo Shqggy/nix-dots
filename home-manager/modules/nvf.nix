@@ -70,7 +70,6 @@
         yaml.enable = true;
         json.enable = true;
 
-        awk.enable = true;
         docker.enable = true;
         markdown.enable = true;
       };
