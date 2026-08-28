@@ -1,4 +1,6 @@
 {
   # time.timeZone = "America/New_York";
-  services.automatic-timezoned.enable = true;
+  time.timeZone = "America/Chicago";
+  # time.timeZone = "America/Los_Angeles";
 }
+
