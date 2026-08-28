@@ -7,7 +7,7 @@
     ./foot.nix
     ./git.nix
     ./gtk.nix
-    ./lapce.nix
+    ./vscodium.nix
     ./mako.nix
     ./nvf.nix
     ./qt.nix

@@ -3,15 +3,16 @@
     background:    #1d1f21;
     background-alt: #282a2e;
 
-    red:    #bf2037;
-    green:  #8c9440;
-    yellow: #e7a051;
-    blue:   #4d6a7c;
+    red:     #bf2037;
+    green:   #8c9440;
+    yellow:  #e7a051;
+    blue:    #4d6a7c;
     magenta: #85678f;
-    cyan:   #5d8e79;
+    cyan:    #5d8e79;
+    grey:    #c5c8c6;
 
     border-color: @blue;
-    selected-color: @blue;
+    selected-color: @grey;
 }
 
 window {
