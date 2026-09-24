@@ -13,6 +13,7 @@
     ./tailscale.nix
     ./timezone.nix
     ./user.nix
+    ./libvirtd.nix
     ./zram.nix
   ];
 }

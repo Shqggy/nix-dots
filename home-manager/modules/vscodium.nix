@@ -89,7 +89,7 @@
         "git.confirmSync" = false;
 
         # ── Workbench ─────────────────────────────────────
-        "workbench.colorTheme" = "Tokyo Night Storm";
+        "workbench.colorTheme" = "Tokyo Night";
         "workbench.startupEditor" = "none";
         "workbench.editor.enablePreview" = false;
 
@@ -104,7 +104,6 @@
         "terminal.integrated.cursorBlinking" = false;
         "terminal.integrated.curesorStyleInactive" = "line";
 
-
         # ── Keystrokes ────────────────────────────────────
         "vim.leader" = " ";
 
@@ -114,18 +113,18 @@
           # ─────────────────────────────────────────────
 
           {
-            before = [ "<leader>" "f" "f" ];
-            commands = [ "workbench.action.quickOpen" ];
+            before = ["<leader>" "f" "f"];
+            commands = ["workbench.action.quickOpen"];
           }
 
           {
-            before = [ "<leader>" "f" "s" ];
-            commands = [ "workbench.action.findInFiles" ];
+            before = ["<leader>" "f" "s"];
+            commands = ["workbench.action.findInFiles"];
           }
 
           {
-            before = [ "<leader>" "f" "b" ];
-            commands = [ "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" ];
+            before = ["<leader>" "f" "b"];
+            commands = ["workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"];
           }
 
           # ─────────────────────────────────────────────
@@ -133,13 +132,13 @@
           # ─────────────────────────────────────────────
 
           {
-            before = [ "<leader>" "s" "s" ];
-            commands = [ "workbench.action.gotoSymbol" ];
+            before = ["<leader>" "s" "s"];
+            commands = ["workbench.action.gotoSymbol"];
           }
 
           {
-            before = [ "<leader>" "s" "w" ];
-            commands = [ "workbench.action.showAllSymbols" ];
+            before = ["<leader>" "s" "w"];
+            commands = ["workbench.action.showAllSymbols"];
           }
 
           # ─────────────────────────────────────────────
@@ -147,28 +146,28 @@
           # ─────────────────────────────────────────────
 
           {
-            before = [ "<leader>" "d" ];
-            commands = [ "editor.action.revealDefinition" ];
+            before = ["<leader>" "d"];
+            commands = ["editor.action.revealDefinition"];
           }
 
           {
-            before = [ "<leader>" "r" ];
-            commands = [ "editor.action.goToReferences" ];
+            before = ["<leader>" "r"];
+            commands = ["editor.action.goToReferences"];
           }
 
           {
-            before = [ "<leader>" "i" ];
-            commands = [ "editor.action.goToImplementation" ];
+            before = ["<leader>" "i"];
+            commands = ["editor.action.goToImplementation"];
           }
 
           {
-            before = [ "<leader>" "t" ];
-            commands = [ "editor.action.goToTypeDefinition" ];
+            before = ["<leader>" "t"];
+            commands = ["editor.action.goToTypeDefinition"];
           }
 
           {
-            before = [ "<leader>" "n" ];
-            commands = [ "editor.action.rename" ];
+            before = ["<leader>" "n"];
+            commands = ["editor.action.rename"];
           }
 
           # ─────────────────────────────────────────────
@@ -176,18 +175,18 @@
           # ─────────────────────────────────────────────
 
           {
-            before = [ "<leader>" "t" "t" ];
-            commands = [ "workbench.action.terminal.toggleTerminal" ];
+            before = ["<leader>" "t" "t"];
+            commands = ["workbench.action.terminal.toggleTerminal"];
           }
 
           {
-            before = [ "<leader>" "t" "n" ];
-            commands = [ "workbench.action.terminal.new" ];
+            before = ["<leader>" "t" "n"];
+            commands = ["workbench.action.terminal.new"];
           }
 
           {
-            before = [ "<leader>" "t" "f" ];
-            commands = [ "workbench.action.terminal.focus" ];
+            before = ["<leader>" "t" "f"];
+            commands = ["workbench.action.terminal.focus"];
           }
 
           # ─────────────────────────────────────────────
@@ -195,13 +194,13 @@
           # ─────────────────────────────────────────────
 
           {
-           before = [ "<leader>" "w" ];
-            commands = [ "workbench.action.files.save" ];
+            before = ["<leader>" "w"];
+            commands = ["workbench.action.files.save"];
           }
 
           {
-            before = [ "<leader>" "q" ];
-            commands = [ "workbench.action.closeActiveEditor" ];
+            before = ["<leader>" "q"];
+            commands = ["workbench.action.closeActiveEditor"];
           }
         ];
       };

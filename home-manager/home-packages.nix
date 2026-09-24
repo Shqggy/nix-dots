@@ -16,6 +16,7 @@
     qimgv
     rnote
     vlc
+    wine
     zotero
 
     # CLI utils
@@ -41,6 +42,7 @@
     ripgrep
     gdown
     openconnect
+    localsend
     silicon
     slurp
     sshfs

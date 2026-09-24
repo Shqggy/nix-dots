@@ -9,7 +9,7 @@
     defaultUserShell = pkgs.bash;
     users.${user} = {
       isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager" "audio" "docker"];
+      extraGroups = ["wheel" "networkmanager" "audio" "docker" "libvirtd" "kvm"];
     };
   };
 
